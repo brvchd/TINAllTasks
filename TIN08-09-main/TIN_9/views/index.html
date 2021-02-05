@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculations</title>
+
+    <script>
+        function calculate() {
+            let xtpr = new XMLHttpRequest();
+             let URL = "/calculation";
+
+            xtpr.open("POST", URL);
+            xtpr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+
+            let number1 = document.getElementById("number1").value;
+            let operation = document.getElementById("operation").value;
+            let number2 = document.getElementById("number2").value;
+            let body = {
+                "number1": number1,
+                "operation": operation,
+                "number2": number2
+            };
+
+            xtpr.send(JSON.stringify(body));
+
+            xtpr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("result").innerHTML = JSON.parse(xtpr.responseText).result;
+                }
+            };
+
+        }
+
+    </script>
+
+</head>
+<body>
+<fieldset>
+    <legend>Calculation</legend>
+    <div>
+        <input type="text" id="number1" placeholder="ex: 1,2,3...">
+        <input type="text" id="operation" placeholder="ex: add/sub/div/mul">
+        <input type="text" id="number2" placeholder="ex: 1,2,3...">
+        <br>
+        <label id="result"></label>
+        <br>
+        <button id="submit" onclick="calculate()">Calculate</button>
+    </div>
+</fieldset>
+
+</body>
+</html>

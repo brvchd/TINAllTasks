@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add row in form</title>
+  </head>
+  <body>
+    <h1>Add row in form</h1>
+    <table id="table" border="1px solid black">
+      <tr>
+        <th>
+          <input
+            type="submit"
+            name="addRow"
+            value="Add row"
+            onclick="addRow()"
+          />
+        </th>
+        <th>
+          <input
+            type="submit"
+            name="deleteRow"
+            value="Delete row"
+            onclick="deleteRow()"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th>check box</th>
+        <th>Input text</th>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="checkB" /></td>
+        <td><input type="text" name="txt" /></td>
+      </tr>
+    </table>
+  </body>
+  <script src="6d.js"></script>
+</html>

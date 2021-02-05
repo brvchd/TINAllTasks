@@ -1,0 +1,18 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Title
+h1 Waiting for Json
+p
+    | Please, input some data
+form(name='form1' method='POST' action='/jsondata')
+    | Name:
+    input(type='text' name='name')
+    br
+    | Surname:
+    input(type='text' name='surname')
+    br
+    | Phone num.:
+    input(type='text' name='phone')
+    br
+    input(type='submit' name='submit' value='submit')
